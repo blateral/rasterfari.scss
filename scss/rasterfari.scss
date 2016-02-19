@@ -2,6 +2,7 @@
 // * Settings
 $rasterfari__cols: 12 !default;
 $rasterfari__gutter: 20px !default;
+$rasterfari__namespace: 'rf-';
 $rasterfari__breakpoints: (
     'medium': '(min-width: 40em)',
     'large': '(min-width: 64em)'
@@ -11,7 +12,7 @@ $rasterfari__breakpoints: (
 
 //**
 // * Container
-.grid {
+.#{$rasterfari__namespace}grid {
     margin-left: -$rasterfari__gutter;
     display: block;
 }
@@ -20,7 +21,7 @@ $rasterfari__breakpoints: (
 
 //**
 // * Items
-.grid__col {
+.#{$rasterfari__namespace}grid__col {
     width: 100%;
     padding-left: $rasterfari__gutter;
     -webkit-box-sizing:border-box;
