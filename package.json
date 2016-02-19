@@ -1,0 +1,15 @@
+{
+  "name": "rasterfari.scss",
+  "version": "0.1.0",
+  "description": "easy peasy dead simple grid system for Sass",
+  "scripts": {
+      "watch": "node-sass --watch scss/rasterfari.scss example/css/rasterfari.css"
+  },
+  "keywords": [
+    "scss",
+    "sass",
+    "grid"
+  ],
+  "author": "Fabian Trinler <fabian.trinler@blateral.com>",
+  "license": "MIT"
+}

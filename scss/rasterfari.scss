@@ -1,0 +1,100 @@
+//**
+// * Settings
+$rasterfari__cols: 12 !default;
+$rasterfari__gutter: 20px !default;
+$rasterfari__breakpoints: (
+    'medium': '(min-width: 40em)',
+    'large': '(min-width: 64em)'
+) !default;
+
+
+
+//**
+// * Container
+.grid {
+    margin-left: -$rasterfari__gutter;
+    display: block;
+}
+
+
+
+//**
+// * Items
+.grid__col {
+    width: 100%;
+    padding-left: $rasterfari__gutter;
+    -webkit-box-sizing:border-box;
+       -moz-box-sizing:border-box;
+            box-sizing:border-box;
+    display: inline-block;
+    vertical-align:top;
+
+    @for $i from 1 through $rasterfari__cols {
+        &--#{$i} {
+            width: $i / $rasterfari__cols * 100%;
+        }
+    }
+
+    @each $breakpoint in $rasterfari__breakpoints {
+        $name: nth($breakpoint, 1);
+        $mq: nth($breakpoint, 2);
+
+        @media only screen and #{$mq} {
+            @for $i from 1 through $rasterfari__cols {
+                &--#{$i}\@#{$name} {
+                    width: $i / $rasterfari__cols * 100%;
+                }
+            }
+        }
+    }
+}
+
+
+
+//**
+// * Push state
+@for $i from 1 through $rasterfari__cols {
+    .is-pushed-by-#{$i} {
+        position: relative;
+        left: $i / $rasterfari__cols * 100%;
+    }
+}
+
+@each $breakpoint in $rasterfari__breakpoints {
+    $name: nth($breakpoint, 1);
+    $mq: nth($breakpoint, 2);
+
+    @media only screen and #{$mq} {
+        @for $i from 1 through $rasterfari__cols {
+            .is-pushed-by-#{$i}\@#{$name} {
+                position: relative;
+                left: $i / $rasterfari__cols * 100%;
+            }
+        }
+    }
+}
+
+
+
+//**
+// * Pull state
+@for $i from 1 through $rasterfari__cols {
+    .is-pulled-by-#{$i} {
+        position: relative;
+        right: $i / $rasterfari__cols * 100%;
+    }
+}
+
+@each $breakpoint in $rasterfari__breakpoints {
+    $name: nth($breakpoint, 1);
+    $mq: nth($breakpoint, 2);
+
+    @media only screen and #{$mq} {
+        @for $i from 1 through $rasterfari__cols {
+            .is-pulled-by-#{$i}\@#{$name} {
+                position: relative;
+                right: $i / $rasterfari__cols * 100%;
+            }
+        }
+    }
+}

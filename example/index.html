@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/rasterfari.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .wrapper {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .c {
+            height: 80px;
+            background-color: lightblue;
+        }
+
+        .d {
+            height: 40px;
+            background-color: tan;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="grid">
+            <div class="grid__col grid__col--1"><div class="c"></div></div><!--
+            --><div class="grid__col grid__col--1"><div class="c"></div></div><!--
+            --><div class="grid__col grid__col--1"><div class="c"></div></div><!--
+            --><div class="grid__col grid__col--1"><div class="c"></div></div><!--
+            --><div class="grid__col grid__col--1"><div class="c"></div></div><!--
+            --><div class="grid__col grid__col--1"><div class="c"></div></div><!--
+            --><div class="grid__col grid__col--1"><div class="c"></div></div><!--
+            --><div class="grid__col grid__col--1"><div class="c"></div></div><!--
+            --><div class="grid__col grid__col--1"><div class="c"></div></div><!--
+            --><div class="grid__col grid__col--1"><div class="c"></div></div><!--
+            --><div class="grid__col grid__col--1"><div class="c"></div></div><!--
+            --><div class="grid__col grid__col--1"><div class="c"></div></div>
+        </div>
+        <p></p>
+        <div class="grid">
+            <div class="grid__col grid__col--2"><div class="c"></div></div><!--
+            --><div class="grid__col grid__col--2"><div class="c"></div></div><!--
+            --><div class="grid__col grid__col--2"><div class="c"></div></div><!--
+            --><div class="grid__col grid__col--2"><div class="c"></div></div><!--
+            --><div class="grid__col grid__col--2"><div class="c"></div></div><!--
+            --><div class="grid__col grid__col--2"><div class="c"></div></div>
+        </div>
+        <p></p>
+        <div class="grid">
+            <div class="grid__col grid__col--3"><div class="c"></div></div><!--
+            --><div class="grid__col grid__col--3"><div class="c"></div></div><!--
+            --><div class="grid__col grid__col--3"><div class="c"></div></div><!--
+            --><div class="grid__col grid__col--3"><div class="c"></div></div>
+        </div>
+
+        <h3>Nested</h3>
+        <div class="grid">
+            <div class="grid__col  grid__col--8">
+                <div class="c">
+                    <div class="grid">
+                        <div class="grid__col  grid__col--6"><div class="d"></div></div><!--
+                        --><div class="grid__col  grid__col--6"><div class="d"></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h3>Responsive</h3>
+        <div class="grid">
+            <div class="grid__col  grid__col--6@medium  grid__col--3@large"><div class="c"></div></div><!--
+            --><div class="grid__col  grid__col--6@medium  grid__col--3@large"><div class="c"></div></div><!--
+            --><div class="grid__col  grid__col--6@medium  grid__col--3@large"><div class="c"></div></div><!--
+            --><div class="grid__col  grid__col--6@medium  grid__col--3@large"><div class="c"></div></div>
+        </div>
+
+        <h3>Push &amp; Pull</h3>
+        <div class="grid">
+            <div class="grid__col  grid__col--9  is-pushed-by-3"><div class="c"></div></div><!--
+            --><div class="grid__col  grid__col--3  is-pulled-by-9"><div class="d"></div></div>
+        </div>
+
+        <h3>Push &amp; Pull (responsive)</h3>
+        <div class="grid">
+            <div class="grid__col  grid__col--9@medium  is-pushed-by-3@large"><div class="c"></div></div><!--
+            --><div class="grid__col  grid__col--3@medium  is-pulled-by-9@large"><div class="d"></div></div>
+        </div>
+    </div>
+</body>
+</html>
