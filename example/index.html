@@ -2,12 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
+    <title>Rasterfari / Easy peasy grid system, ya man</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.4.1/themes/prism-okaidia.min.css">
     <link rel="stylesheet" href="css/rasterfari.css">
     <style>
         body {
             margin: 0;
             padding: 0;
+            font-family: sans-serif;
         }
 
         .wrapper {
@@ -16,81 +18,68 @@
             padding: 0 20px;
         }
 
-        .c {
-            height: 80px;
+        .example-col {
+            padding: 1em;
+            margin-bottom: 1em;
             background-color: lightblue;
-        }
-
-        .d {
-            height: 40px;
-            background-color: tan;
+            text-align: center;
+            font-family: monospace;
+            word-wrap: break-word;
+            font-size: .8em;
         }
     </style>
 </head>
 <body>
     <div class="wrapper">
-        <div class="grid">
-            <div class="grid__col grid__col--1"><div class="c"></div></div><!--
-            --><div class="grid__col grid__col--1"><div class="c"></div></div><!--
-            --><div class="grid__col grid__col--1"><div class="c"></div></div><!--
-            --><div class="grid__col grid__col--1"><div class="c"></div></div><!--
-            --><div class="grid__col grid__col--1"><div class="c"></div></div><!--
-            --><div class="grid__col grid__col--1"><div class="c"></div></div><!--
-            --><div class="grid__col grid__col--1"><div class="c"></div></div><!--
-            --><div class="grid__col grid__col--1"><div class="c"></div></div><!--
-            --><div class="grid__col grid__col--1"><div class="c"></div></div><!--
-            --><div class="grid__col grid__col--1"><div class="c"></div></div><!--
-            --><div class="grid__col grid__col--1"><div class="c"></div></div><!--
-            --><div class="grid__col grid__col--1"><div class="c"></div></div>
-        </div>
-        <p></p>
-        <div class="grid">
-            <div class="grid__col grid__col--2"><div class="c"></div></div><!--
-            --><div class="grid__col grid__col--2"><div class="c"></div></div><!--
-            --><div class="grid__col grid__col--2"><div class="c"></div></div><!--
-            --><div class="grid__col grid__col--2"><div class="c"></div></div><!--
-            --><div class="grid__col grid__col--2"><div class="c"></div></div><!--
-            --><div class="grid__col grid__col--2"><div class="c"></div></div>
-        </div>
-        <p></p>
-        <div class="grid">
-            <div class="grid__col grid__col--3"><div class="c"></div></div><!--
-            --><div class="grid__col grid__col--3"><div class="c"></div></div><!--
-            --><div class="grid__col grid__col--3"><div class="c"></div></div><!--
-            --><div class="grid__col grid__col--3"><div class="c"></div></div>
-        </div>
+        <h1>Rasterfari - Easy peasy grid system, ya man</h1>
+        <p>Rasterfari is an easy to use semantic grid system. Use it with simple class names:</p>
 
-        <h3>Nested</h3>
-        <div class="grid">
-            <div class="grid__col  grid__col--8">
-                <div class="c">
-                    <div class="grid">
-                        <div class="grid__col  grid__col--6"><div class="d"></div></div><!--
-                        --><div class="grid__col  grid__col--6"><div class="d"></div></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <h3>Responsive</h3>
-        <div class="grid">
-            <div class="grid__col  grid__col--6@medium  grid__col--3@large"><div class="c"></div></div><!--
-            --><div class="grid__col  grid__col--6@medium  grid__col--3@large"><div class="c"></div></div><!--
-            --><div class="grid__col  grid__col--6@medium  grid__col--3@large"><div class="c"></div></div><!--
-            --><div class="grid__col  grid__col--6@medium  grid__col--3@large"><div class="c"></div></div>
-        </div>
-
-        <h3>Push &amp; Pull</h3>
-        <div class="grid">
-            <div class="grid__col  grid__col--9  is-pushed-by-3"><div class="c"></div></div><!--
-            --><div class="grid__col  grid__col--3  is-pulled-by-9"><div class="d"></div></div>
-        </div>
-
-        <h3>Push &amp; Pull (responsive)</h3>
-        <div class="grid">
-            <div class="grid__col  grid__col--9@medium  is-pushed-by-3@large"><div class="c"></div></div><!--
-            --><div class="grid__col  grid__col--3@medium  is-pulled-by-9@large"><div class="d"></div></div>
-        </div>
+<div class="rf-grid" data-code>
+    <div class="rf-grid__col">
+        <div class="example-col">12 cols</div>
     </div>
+
+    <div class="rf-grid__col  rf-grid__col--11">
+        <div class="example-col">11 cols</div>
+    </div>
+    <div class="rf-grid__col  rf-grid__col--1">
+        <div class="example-col">1 col</div>
+    </div>
+
+    <div class="rf-grid__col  rf-grid__col--10">
+        <div class="example-col">10 cols</div>
+    </div>
+    <div class="rf-grid__col  rf-grid__col--2">
+        <div class="example-col">2 cols</div>
+    </div>
+
+    <div class="rf-grid__col  rf-grid__col--6">
+        <div class="example-col">6 cols</div>
+    </div>
+    <div class="rf-grid__col  rf-grid__col--6">
+        <div class="example-col">6 cols</div>
+    </div>
+</div>
+
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.4.1/prism.min.js" data-manual></script>
+    <script>
+        var codeElements = document.querySelectorAll('[data-code]');
+
+        for(var i = 0; i < codeElements.length; i++) {
+            var el = codeElements[i];
+            var html = el.outerHTML.replace('data-code=""', '').replace(/</g, '&lt;');
+            var code = document.createElement('pre')
+
+            code.className = 'language-markup';
+            code.innerHTML = '<code>' + html + '</code>';
+            console.log(code);
+            el.insertAdjacentHTML('afterend', code.outerHTML);
+        }
+
+        Prism.highlightAll();
+    </script>
 </body>
 </html>
