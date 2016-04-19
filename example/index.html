@@ -50,6 +50,24 @@
             word-wrap: break-word;
             font-size: .8em;
         }
+
+        .footer {
+            text-align: right;
+        }
+
+        .bdot {
+            text-decoration: none;
+            color: #1fc2f4;
+        }
+
+        .bdot:after {
+            content: ".";
+            display: inline-block;
+            width: 14px;
+            height: 12px;
+            font-size: 55px;
+
+        }
     </style>
 </head>
 <body>
@@ -195,6 +213,10 @@ $rasterfari__breakpoints: (             /* Grid breakpoints */
     <div class="grid__col  grid__col--6@medium">
         <div class="example-col">6 cols <br>More Content <br>More Content... <br>More...</div>
     </div>
+</section>
+
+<section class="footer">
+    <a href="http://blateral.com" class="bdot"><span>created by</span></a>
 </section>
 
     </div>
