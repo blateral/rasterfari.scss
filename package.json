@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "easy peasy dead simple grid system for Sass",
   "scripts": {
-      "start": "node-sass --watch scss/rasterfari.scss example/css/rasterfari.css"
+    "start": "node-sass --watch scss/rasterfari.scss example/css/rasterfari.css"
   },
   "keywords": [
     "scss",
@@ -11,5 +11,8 @@
     "grid"
   ],
   "author": "Fabian Trinler <fabian.trinler@blateral.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "node-sass": "^3.4.2"
+  }
 }
