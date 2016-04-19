@@ -4,16 +4,25 @@
     <meta charset="UTF-8">
     <title>Rasterfari / Easy peasy grid system, ya man</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.4.1/themes/prism-okaidia.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/rasterfari.css">
     <style>
         body {
             margin: 0;
             padding: 0;
-            font-family: sans-serif;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        h2 {
+            padding-top: 50px;
+        }
+
+        section, p {
+            padding-bottom: 50px;
         }
 
         .wrapper {
-            max-width: 1400px;
+            max-width: 1100px;
             margin: 0 auto;
             padding: 0 20px;
         }
@@ -27,40 +36,73 @@
             word-wrap: break-word;
             font-size: .8em;
         }
+
+        .example-col--has-no-gutter {
+            background-color: #0086b3;
+        }
+
+        .example-nested-col {
+            padding: 1em;
+            margin-bottom: 1em;
+            background-color: tan;
+            text-align: center;
+            font-family: monospace;
+            word-wrap: break-word;
+            font-size: .8em;
+        }
     </style>
 </head>
 <body>
     <div class="wrapper">
         <h1>Rasterfari - Easy peasy grid system, ya man</h1>
 
+        <h2>Default Settings:</h2>
+
+        <p>Feel free to overwrite them with your prefered values.</p>
+
+        <pre><code class="language-css">@import "path/to/rasterfari.scss";
+
+/* some styles */
+
+$rasterfari__cols: 12 !default;         /* Use 16 if you want bigger Grid, Just rename it 16 */
+$rasterfari__gutter: 20px !default;     /* You can make the Gutter bigger or smaller when you change the value */
+$rasterfari__namespace: '' !default;    /* You can add a Name to the Grid */
+$rasterfari__breakpoints: (             /* Grid breakpoints */
+    'medium': '(min-width: 40em)',      /* You can change the breakpoints naming too, but don't forget to rename it everywhere */
+    'large': '(min-width: 64em)'        /* Add a new breakpoint to the Grid if you need */
+) !default;
+
+/* some more styles */
+</code></pre>
+
         <h2>Basic usage</h2>
 
-<div class="grid" data-code>
+<section class="grid" data-code>
     <div class="grid__col">
         <div class="example-col">12 cols</div>
     </div>
 
-    <div class="grid__col  grid__col--11">
+    <div class="grid__col  grid__col--11@medium">
         <div class="example-col">11 cols</div>
     </div>
-    <div class="grid__col  grid__col--1">
+    <div class="grid__col  grid__col--1@medium">
         <div class="example-col">1 col</div>
     </div>
 
-    <div class="grid__col  grid__col--10">
+    <div class="grid__col  grid__col--10@medium">
         <div class="example-col">10 cols</div>
     </div>
-    <div class="grid__col  grid__col--2">
+    <div class="grid__col  grid__col--2@medium">
         <div class="example-col">2 cols</div>
     </div>
 
-    <div class="grid__col  grid__col--6">
+    <div class="grid__col  grid__col--6@medium">
         <div class="example-col">6 cols</div>
     </div>
-    <div class="grid__col  grid__col--6">
+    <div class="grid__col  grid__col--6@medium">
         <div class="example-col">6 cols</div>
     </div>
-</div>
+</section>
 
     <h2>Responsive Grid</h2>
 
@@ -69,8 +111,90 @@
         <div class="example-col">Aside</div>
     </aside>
     <main class="grid__col  grid__col--8@medium  grid__col--10@large">
-        <div class="example-col">Main</div>
+        <div class="example-col">Main Content</div>
     </main>
+</section>
+
+    <h2> Nested Grid</h2>
+
+<section class="grid" data-code>
+    <aside class="grid__col  grid__col--4@medium  grid__col--2@large">
+        <div class="example-col">Aside</div>
+    </aside>
+    <main class="grid__col  grid__col--8@medium  grid__col--10@large">
+        <div class="example-col">
+            <p>Main Content</p>
+            <div class="grid">
+                <div class="grid__col  grid__col--6@medium">
+                    <div class="example-nested-col">Nested Grid 1</div>
+                </div>
+                <div class="grid__col  grid__col--6@medium">
+                    <div class="example-nested-col">Nested Grid 2</div>
+                </div>
+                <div class="grid__col  grid__col--4@medium">
+                    <div class="example-nested-col">Nested Grid 3</div>
+                </div>
+                <div class="grid__col  grid__col--8@medium">
+                    <div class="example-nested-col">Nested Grid 4</div>
+                </div>
+            </div>
+        </div>
+    </main>
+</section>
+
+<h2>Push &amp; Pull</h2>
+
+<section class="grid" data-code>
+    <div class="grid__col  grid__col--8@medium  is-pushed-by-4@large">
+        <div class="example-col">Main Content</div>
+    </div>
+    <div class="grid__col  grid__col--4@medium  is-pulled-by-8@large">
+        <div class="example-col">Aside</div>
+    </div>
+
+    <div class="grid__col  grid__col--6@medium  grid__col--8@large  is-pushed-by-3@medium  is-pushed-by-2@large">
+        <div class="example-col">Main Content</div>
+    </div>
+    <div class="grid__col  grid__col--3@medium  grid__col--2@large  is-pulled-by-6@medium  is-pulled-by-8@large">
+        <div class="example-col">Aside Left</div>
+    </div>
+    <div class="grid__col  grid__col--3@medium  grid__col--2@large">
+        <div class="example-col">Aside Right</div>
+    </div>
+
+</section>
+
+<h2>Grid without Gutter</h2>
+
+<section class="grid  has-no-gutter" data-code>
+    <aside class="grid__col  grid__col--4@medium  grid__col--2@large">
+        <div class="example-col">Aside</div>
+    </aside>
+    <main class="grid__col  grid__col--8@medium  grid__col--10@large">
+        <div class="example-col  example-col--has-no-gutter">Main Content</div>
+    </main>
+</section>
+
+    <h2>Middle aligned Grid System</h2>
+
+<section class="grid  is-middle" data-code>
+    <div class="grid__col  grid__col--6@medium">
+        <div class="example-col">6 cols</div>
+    </div>
+    <div class="grid__col  grid__col--6@medium">
+        <div class="example-col">6 cols <br>More Content <br>More Content... <br>More...</div>
+    </div>
+</section>
+
+    <h2>Bottom aligned Grid System</h2>
+
+<section class="grid  is-bottom" data-code>
+    <div class="grid__col  grid__col--6@medium">
+        <div class="example-col">6 cols</div>
+    </div>
+    <div class="grid__col  grid__col--6@medium">
+        <div class="example-col">6 cols <br>More Content <br>More Content... <br>More...</div>
+    </div>
 </section>
 
     </div>
