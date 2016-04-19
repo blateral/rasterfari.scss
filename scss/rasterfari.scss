@@ -1,6 +1,6 @@
 //**
 // * Settings
-$rasterfari__cols: 12 !default;
+$rasterfari__cols: 12 !default; 
 $rasterfari__gutter: 20px !default;
 $rasterfari__namespace: '' !default;
 $rasterfari__breakpoints: (
@@ -16,6 +16,10 @@ $rasterfari__breakpoints: (
     margin-left: -$rasterfari__gutter;
     display: block;
     font-size: 0;
+
+    &.has-no-gutter {
+      margin-left: 0;
+    }
 }
 
 
@@ -31,6 +35,19 @@ $rasterfari__breakpoints: (
     display: inline-block;
     vertical-align: top;
     font-size: 16px;
+
+    .is-middle & {
+        vertical-align: middle;
+    }
+
+    .is-bottom & {
+        vertical-align: bottom;
+    }
+
+    .has-no-gutter & {
+      padding-left: 0;
+    }
+
 
     @for $i from 1 through $rasterfari__cols {
         &--#{$i} {
