@@ -1,9 +1,9 @@
-.rf-grid {
+.grid {
   margin-left: -20px;
   display: block;
   font-size: 0; }
 
-.rf-grid__col {
+.grid__col {
   width: 100%;
   padding-left: 20px;
   -webkit-box-sizing: border-box;
@@ -12,79 +12,79 @@
   display: inline-block;
   vertical-align: top;
   font-size: 16px; }
-  .rf-grid__col--1 {
+  .grid__col--1 {
     width: 8.33333%; }
-  .rf-grid__col--2 {
+  .grid__col--2 {
     width: 16.66667%; }
-  .rf-grid__col--3 {
+  .grid__col--3 {
     width: 25%; }
-  .rf-grid__col--4 {
+  .grid__col--4 {
     width: 33.33333%; }
-  .rf-grid__col--5 {
+  .grid__col--5 {
     width: 41.66667%; }
-  .rf-grid__col--6 {
+  .grid__col--6 {
     width: 50%; }
-  .rf-grid__col--7 {
+  .grid__col--7 {
     width: 58.33333%; }
-  .rf-grid__col--8 {
+  .grid__col--8 {
     width: 66.66667%; }
-  .rf-grid__col--9 {
+  .grid__col--9 {
     width: 75%; }
-  .rf-grid__col--10 {
+  .grid__col--10 {
     width: 83.33333%; }
-  .rf-grid__col--11 {
+  .grid__col--11 {
     width: 91.66667%; }
-  .rf-grid__col--12 {
+  .grid__col--12 {
     width: 100%; }
   @media only screen and (min-width: 40em) {
-    .rf-grid__col--1\@medium {
+    .grid__col--1\@medium {
       width: 8.33333%; }
-    .rf-grid__col--2\@medium {
+    .grid__col--2\@medium {
       width: 16.66667%; }
-    .rf-grid__col--3\@medium {
+    .grid__col--3\@medium {
       width: 25%; }
-    .rf-grid__col--4\@medium {
+    .grid__col--4\@medium {
       width: 33.33333%; }
-    .rf-grid__col--5\@medium {
+    .grid__col--5\@medium {
       width: 41.66667%; }
-    .rf-grid__col--6\@medium {
+    .grid__col--6\@medium {
       width: 50%; }
-    .rf-grid__col--7\@medium {
+    .grid__col--7\@medium {
       width: 58.33333%; }
-    .rf-grid__col--8\@medium {
+    .grid__col--8\@medium {
       width: 66.66667%; }
-    .rf-grid__col--9\@medium {
+    .grid__col--9\@medium {
       width: 75%; }
-    .rf-grid__col--10\@medium {
+    .grid__col--10\@medium {
       width: 83.33333%; }
-    .rf-grid__col--11\@medium {
+    .grid__col--11\@medium {
       width: 91.66667%; }
-    .rf-grid__col--12\@medium {
+    .grid__col--12\@medium {
       width: 100%; } }
   @media only screen and (min-width: 64em) {
-    .rf-grid__col--1\@large {
+    .grid__col--1\@large {
       width: 8.33333%; }
-    .rf-grid__col--2\@large {
+    .grid__col--2\@large {
       width: 16.66667%; }
-    .rf-grid__col--3\@large {
+    .grid__col--3\@large {
       width: 25%; }
-    .rf-grid__col--4\@large {
+    .grid__col--4\@large {
       width: 33.33333%; }
-    .rf-grid__col--5\@large {
+    .grid__col--5\@large {
       width: 41.66667%; }
-    .rf-grid__col--6\@large {
+    .grid__col--6\@large {
       width: 50%; }
-    .rf-grid__col--7\@large {
+    .grid__col--7\@large {
       width: 58.33333%; }
-    .rf-grid__col--8\@large {
+    .grid__col--8\@large {
       width: 66.66667%; }
-    .rf-grid__col--9\@large {
+    .grid__col--9\@large {
       width: 75%; }
-    .rf-grid__col--10\@large {
+    .grid__col--10\@large {
       width: 83.33333%; }
-    .rf-grid__col--11\@large {
+    .grid__col--11\@large {
       width: 91.66667%; }
-    .rf-grid__col--12\@large {
+    .grid__col--12\@large {
       width: 100%; } }
 
 .is-pushed-by-1 {
