@@ -1,25 +1,25 @@
-# Rasterfari - Easy peasy grid system, ya man
+# Rasterfari - Easy-peasy grid system, ya man
 
 ## Default Settings
 
-Feel free to overwrite them with your prefered values.
+Feel free to overwrite them with your preferred values.
 
 ```css
 @import "path/to/rasterfari.scss";
 
 /* some styles */
 
-$rasterfari__cols: 12 !default;         /* Use 16 if you want bigger Grid, Just rename it 16 */
-$rasterfari__gutter: 20px !default;     /* You can make the Gutter bigger or smaller when you change the value */
-$rasterfari__namespace: '' !default;    /* You can add a Name to the Grid */
+$rasterfari__cols: 12 !default;         /* Just rename it to 16 of you want a larger Grid */
+$rasterfari__gutter: 20px !default;     /* You can make the Gutter bigger or smaller by changing the value */
+$rasterfari__namespace: '' !default;    /* You can give a Name to the Grid */
 $rasterfari__breakpoints: (             /* Grid breakpoints */
-    'medium': '(min-width: 40em)',      /* You can change the breakpoints naming too, but don't forget to rename it everywhere */
-    'large': '(min-width: 64em)'        /* Add a new breakpoint to the Grid if you need */
+    'medium': '(min-width: 40em)',      /* You can change the name of the breakpoints too, but don't forget to do it everywhere */
+    'large': '(min-width: 64em)'        /* Add a new breakpoint to the Grid if you need it */
 ) !default;
 
 /* some more styles */
 ```
-## Basic usage
+## Basic Usage
 
 ```html
 <section class="grid">
@@ -123,7 +123,7 @@ $rasterfari__breakpoints: (             /* Grid breakpoints */
 </section>
 ```
 
-## Middle aligned Grid System
+## Middle-aligned Grid System
 
 ```html
 <section class="grid  is-middle">
@@ -136,7 +136,7 @@ $rasterfari__breakpoints: (             /* Grid breakpoints */
 </section>
 ```
 
-## Bottom aligned Grid System
+## Bottom-aligned Grid System
 
 ```html
 <section class="grid  is-bottom">
