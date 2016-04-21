@@ -13,4 +13,4 @@ rasterfari.scss is a Sass/SCSS based grid system, which will help you to build g
 </ul>
 
 ## Documentation and Demo
-[see here](https://github.io/blateral/rasterfari.scss)
+[see here](http://blateral.github.io/rasterfari.scss/)
