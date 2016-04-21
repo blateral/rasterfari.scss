@@ -1,150 +1,16 @@
-# Rasterfari - Easy-peasy grid system, ya man
+# rasterfari.scss
 
-## Default Settings
+rasterfari.scss is a Sass/SCSS based grid system, which will help you to build grid layouts of any scale and complexity.
 
-Feel free to overwrite them with your preferred values.
+<b>The key features are:</b>
+<ul>
+    <li>Fully responsive, mobile first</li>
+    <li>Unlimited nesting</li>
+    <li>Source order first, content choreography through <code>.is-pulled-by-{n}</code> or <code>.is-pushed-by-{n}</code></li>
+    <li>No floats, all <code>display: inline-block</code></li>
+    <li>Configurable number of columns, gutter size and breakpoints</li>
+    <li>Follows <a href="http://getbem.com/naming/">BEM</a> naming concept</li>
+</ul>
 
-```css
-@import "path/to/rasterfari.scss";
-
-/* some styles */
-
-$rasterfari__cols: 12 !default;         /* Just rename it to 16 of you want a larger Grid */
-$rasterfari__gutter: 20px !default;     /* You can make the Gutter bigger or smaller by changing the value */
-$rasterfari__namespace: '' !default;    /* You can give a Name to the Grid */
-$rasterfari__breakpoints: (             /* Grid breakpoints */
-    'medium': '(min-width: 40em)',      /* You can change the name of the breakpoints too, but don't forget to do it everywhere */
-    'large': '(min-width: 64em)'        /* Add a new breakpoint to the Grid if you need it */
-) !default;
-
-/* some more styles */
-```
-## Basic Usage
-
-```html
-<section class="grid">
-    <div class="grid__col">
-        <div class="example-col">12 cols</div>
-    </div>
-    <div class="grid__col  grid__col--11@medium">
-        <div class="example-col">11 cols</div>
-    </div>
-    <div class="grid__col  grid__col--1@medium">
-        <div class="example-col">1 col</div>
-    </div>
-    <div class="grid__col  grid__col--10@medium">
-        <div class="example-col">10 cols</div>
-    </div>
-    <div class="grid__col  grid__col--2@medium">
-        <div class="example-col">2 cols</div>
-    </div>
-    <div class="grid__col  grid__col--6@medium">
-        <div class="example-col">6 cols</div>
-    </div>
-    <div class="grid__col  grid__col--6@medium">
-        <div class="example-col">6 cols</div>
-    </div>
-</section>
-```
-## Responsive Grid
-
-```html
-<section class="grid">
-    <aside class="grid__col  grid__col--4@medium  grid__col--2@large">
-        <div class="example-col">Aside</div>
-    </aside>
-    <main class="grid__col  grid__col--8@medium  grid__col--10@large">
-        <div class="example-col">Main</div>
-    </main>
-</section>
-```
-
-## Nested Grid
-
-```html
-<section class="grid">
-    <aside class="grid__col  grid__col--4@medium  grid__col--2@large">
-        <div class="example-col">Aside</div>
-    </aside>
-    <main class="grid__col  grid__col--8@medium  grid__col--10@large">
-        <div class="example-col">
-            <p>Main</p>
-            <div class="grid">
-                <div class="grid__col  grid__col--6@medium">
-                    <div class="example-nested-col">Nested Grid 1</div>
-                </div>
-                <div class="grid__col  grid__col--6@medium">
-                    <div class="example-nested-col">Nested Grid 2</div>
-                </div>
-                <div class="grid__col  grid__col--4@medium">
-                    <div class="example-nested-col">Nested Grid 3</div>
-                </div>
-                <div class="grid__col  grid__col--8@medium">
-                    <div class="example-nested-col">Nested Grid 4</div>
-                </div>
-            </div>
-        </div>
-    </main>
-</section>
-```
-
-## Push & Pull
-
-```html
-<section class="grid">
-    <div class="grid__col  grid__col--8@medium  is-pushed-by-4@large">
-        <div class="example-col">Main Content</div>
-    </div>
-    <div class="grid__col  grid__col--4@medium  is-pulled-by-8@large">
-        <div class="example-col">Aside</div>
-    </div>
-    <div class="grid__col  grid__col--6@medium  grid__col--8@large  is-pushed-by-3@medium  is-pushed-by-2@large">
-        <div class="example-col">Main Content</div>
-    </div>
-    <div class="grid__col  grid__col--3@medium  grid__col--2@large  is-pulled-by-6@medium  is-pulled-by-8@large">
-        <div class="example-col">Aside Left</div>
-    </div>
-    <div class="grid__col  grid__col--3@medium  grid__col--2@large">
-        <div class="example-col">Aside Right</div>
-    </div>
-</section>
-```
-
-## Grid without Gutter
-
-```html
-<section class="grid  has-no-gutter">
-    <aside class="grid__col  grid__col--4@medium  grid__col--2@large">
-        <div class="example-col">Aside</div>
-    </aside>
-    <main class="grid__col  grid__col--8@medium  grid__col--10@large">
-        <div class="example-col  example-col--has-no-gutter">Main</div>
-    </main>
-</section>
-```
-
-## Middle-aligned Grid System
-
-```html
-<section class="grid  is-middle">
-        <div class="grid__col  grid__col--6@medium">
-            <div class="example-col">6 cols</div>
-        </div>
-        <div class="grid__col  grid__col--6@medium">
-            <div class="example-col">6 cols <br>More Content <br>More Content... <br>More...</div>
-        </div>
-</section>
-```
-
-## Bottom-aligned Grid System
-
-```html
-<section class="grid  is-bottom">
-    <div class="grid__col  grid__col--6@medium">
-        <div class="example-col">6 cols</div>
-    </div>
-    <div class="grid__col  grid__col--6@medium">
-        <div class="example-col">6 cols <br>More Content <br>More Content... <br>More...</div>
-    </div>
-</section>
-```
+## Documentation and Demo
+[see here](https://github.io/blateral/rasterfari.scss)
