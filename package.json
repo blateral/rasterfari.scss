@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "description": "Sass/SCSS grid system which will help you to build grid layouts of any scale and complexity",
   "scripts": {
-    "start": "node-sass --watch scss/rasterfari.scss example/css/rasterfari.css"
+    "start": "node-sass --watch scss/rasterfari.scss example/css/rasterfari.css",
+    "deploy": "node-sass scss/rasterfari.scss example/css/rasterfari.css && node gh-pages"
   },
   "homepage": "https://github.io/blateral/rasterfari.scss",
   "repository": {
@@ -18,6 +19,7 @@
   "author": "Fabian Trinler <fabian.trinler@blateral.com> (http://blateral.com)",
   "license": "MIT",
   "devDependencies": {
+    "gh-pages": "^0.11.0",
     "node-sass": "^3.4.2"
   }
 }
