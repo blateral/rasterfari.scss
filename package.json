@@ -1,6 +1,6 @@
 {
-  "name": "rasterfari.scss",
-  "version": "0.1.0",
+  "name": "rasterfari-grid",
+  "version": "0.1.2",
   "description": "Sass/SCSS grid system which will help you to build grid layouts of any scale and complexity",
   "scripts": {
     "start": "node-sass --watch scss/rasterfari.scss example/css/rasterfari.css",
