@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rasterfari.scss // scalable Sass/SCSS grid system</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.4.1/themes/prism-okaidia.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/rasterfari.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        h2 {
+            padding-top: 50px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        section, p {
+            padding-bottom: 50px;
+        }
+
+        p > code {
+            background-color: #eee;
+            padding: 5px;
+        }
+
+        .wrapper {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        a {
+            color: #1fc2f4;
+        }
+
+        .example-col {
+            padding: 1em;
+            margin-bottom: 1em;
+            background-color: lightblue;
+            text-align: center;
+            font-family: monospace;
+            word-wrap: break-word;
+            font-size: .8em;
+        }
+
+        .example-col--has-no-gutter {
+            background-color: #0086b3;
+        }
+
+        .example-nested-col {
+            padding: 1em;
+            margin-bottom: 1em;
+            background-color: tan;
+            text-align: center;
+            font-family: monospace;
+            word-wrap: break-word;
+            font-size: .8em;
+        }
+
+        .footer {
+            text-align: right;
+            font-size: 12px;
+        }
+
+        .bdot {
+            text-decoration: none;
+            color: #1fc2f4;
+        }
+
+        .bdot:after {
+            content: ".";
+            display: inline-block;
+            width: 14px;
+            height: 12px;
+            font-size: 55px;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <h1>rasterfari.scss</h1>
+
+        <p>rasterfari.scss is a Sass/SCSS based grid system, which will help you to build grid layouts of any scale and complexity. See <a href="#demo">Demo</a>!</p>
+
+        <b>The key features are:</b>
+        <ul>
+            <li>Fully responsive, mobile first</li>
+            <li>Unlimited nesting</li>
+            <li>Source order first, content choreography through <code>.is-pulled-by-{n}</code> or <code>.is-pushed-by-{n}</code></li>
+            <li>No floats, all <code>display: inline-block</code></li>
+            <li>Configurable number of columns, gutter size and breakpoints</li>
+            <li>Follows <a href="http://getbem.com/naming/">BEM</a> naming concept</li>
+        </ul>
+
+        <h2>Install rasterfari.scss</h2>
+
+        <h3>Download</h3>
+        <a href="https://github.com/blateral/rasterfari.scss/archive/master.zip">Download the latest version from Github</a><br><br>
+
+        <h3><small>or get it from</small> NPM</h3>
+        <pre><code class="language-bash">npm install --save-dev rasterfari-grid</code></pre>
+
+        <h2>Default Settings:</h2>
+
+        <pre><code class="language-css">@import "path/to/rasterfari.scss";
+
+/* some styles */
+
+$rasterfari__cols: 12;                  /* Choose your prefered number of columns (default: 12) */
+$rasterfari__gutter: 20px;              /* the width of the gutter between the columns (default: 20px) */
+$rasterfari__namespace: '';             /* Prefix for the rasterfari classes (default: '') */
+$rasterfari__breakpoints: (             /* Breakpoints */
+    'medium': '(min-width: 40em)',      /* Use the names of the breakpoints as class-suffix in your markup */
+    'large': '(min-width: 64em)'        /* Add a new breakpoint if you need to */
+) !default;
+
+/* some more styles */
+</code></pre>
+
+        <h2 id="demo">Basic Usage</h2>
+
+        <p>Every container which contains columns gets the class <code>.grid</code><br>
+        Every column gets the base class <code>.grid__col</code>, which translates to 100% of the available width.<br><br>
+        By giving <code>.grid__col</code> a <code>.grid__col--${number}</code> modifier, you can decide how many columns you would like to span. <code>${number}</code> can be every number starting from 1 up to <code>$rasterfari__cols</code> which is defined in the default settings.</p>
+
+<section class="grid" data-code>
+    <div class="grid__col">
+        <div class="example-col">12 cols</div>
+    </div>
+
+    <div class="grid__col  grid__col--11">
+        <div class="example-col">11 cols</div>
+    </div>
+    <div class="grid__col  grid__col--1">
+        <div class="example-col">1 col</div>
+    </div>
+
+    <div class="grid__col  grid__col--10">
+        <div class="example-col">10 cols</div>
+    </div>
+    <div class="grid__col  grid__col--2">
+        <div class="example-col">2 cols</div>
+    </div>
+
+    <div class="grid__col  grid__col--6">
+        <div class="example-col">6 cols</div>
+    </div>
+    <div class="grid__col  grid__col--6">
+        <div class="example-col">6 cols</div>
+    </div>
+</section>
+
+    <h2>Responsive Grid</h2>
+    <p>By giving each <code>.grid__col</code> a suffixed modifier like <code>.grid__col--${number}@${breakpoint}</code> you can control at which breakpoint the span should take action. The name of the suffix <code>${breakpoint}</code> is defined in the default settings.</p>
+
+<section class="grid" data-code>
+    <aside class="grid__col  grid__col--4@medium  grid__col--2@large">
+        <div class="example-col">Aside</div>
+    </aside>
+    <main class="grid__col  grid__col--8@medium  grid__col--10@large">
+        <div class="example-col">Main Content</div>
+    </main>
+</section>
+
+    <h2>Nested Grid</h2>
+    <p>Within every <code>.grid__col</code> can live another <code>.grid</code> which defines its own columns with its own modifiers. So, technically, the possibility to nest grids into each other is infinite.</p>
+
+<section class="grid" data-code>
+    <aside class="grid__col  grid__col--4@medium  grid__col--2@large">
+        <div class="example-col">Aside</div>
+    </aside>
+    <main class="grid__col  grid__col--8@medium  grid__col--10@large">
+        <div class="example-col">
+            <p>Main Content</p>
+            <div class="grid">
+                <div class="grid__col  grid__col--6@medium">
+                    <div class="example-nested-col">Nested Grid 1</div>
+                </div>
+                <div class="grid__col  grid__col--6@medium">
+                    <div class="example-nested-col">Nested Grid 2</div>
+                </div>
+                <div class="grid__col  grid__col--4@medium">
+                    <div class="example-nested-col">Nested Grid 3</div>
+                </div>
+                <div class="grid__col  grid__col--8@medium">
+                    <div class="example-nested-col">Nested Grid 4</div>
+                </div>
+            </div>
+        </div>
+    </main>
+</section>
+
+    <h2>Push &amp; Pull</h2>
+    <p>Let's say, that the aside column is on the left side on large screens, so it comes first in visual terms. Although, in your markup and on small screens you would like to present the main content first. This is where these state classes come into play.<br><br>With the <code>.is-pushed-by-${numberOfCols}</code> and <code>.is-pulled-by-${numberOfCols}</code> states you are able to choreograph your visual layout independently from your markup. You might also use the <code>@${breakpoint}</code> suffix here to add a little more control over pushing and pulling at a certain viewport size.</p>
+
+<section class="grid" data-code>
+    <div class="grid__col  grid__col--8@medium  is-pushed-by-4@large">
+        <div class="example-col">Main Content</div>
+    </div>
+    <div class="grid__col  grid__col--4@medium  is-pulled-by-8@large">
+        <div class="example-col">Aside</div>
+    </div>
+
+    <div class="grid__col  grid__col--6@medium  grid__col--8@large  is-pushed-by-3@medium  is-pushed-by-2@large">
+        <div class="example-col">Main Content</div>
+    </div>
+    <div class="grid__col  grid__col--3@medium  grid__col--2@large  is-pulled-by-6@medium  is-pulled-by-8@large">
+        <div class="example-col">Aside Left</div>
+    </div>
+    <div class="grid__col  grid__col--3@medium  grid__col--2@large">
+        <div class="example-col">Aside Right</div>
+    </div>
+
+</section>
+
+    <h2>Grid without Gutter</h2>
+    <p>Add the <code>.has-no-gutter</code> state to <code>.grid</code> to remove the gutter between the columns.</p>
+
+<section class="grid  has-no-gutter" data-code>
+    <aside class="grid__col  grid__col--4@medium  grid__col--2@large">
+        <div class="example-col">Aside</div>
+    </aside>
+    <main class="grid__col  grid__col--8@medium  grid__col--10@large">
+        <div class="example-col  example-col--has-no-gutter">Main Content</div>
+    </main>
+</section>
+
+    <h2>Middle-aligned Grid System</h2>
+    <p>Add the <code>.is-middle</code> state to <code>.grid</code> to middle-align the columns</p>
+
+<section class="grid  is-middle" data-code>
+    <div class="grid__col  grid__col--6@medium">
+        <div class="example-col">6 cols</div>
+    </div>
+    <div class="grid__col  grid__col--6@medium">
+        <div class="example-col">6 cols <br>More Content <br>More Content... <br>More...</div>
+    </div>
+</section>
+
+    <h2>Bottom-aligned Grid System</h2>
+    <p>Add the <code>.is-bottom</code> state to <code>.grid</code> to bottom-align the columns</p>
+
+<section class="grid  is-bottom" data-code>
+    <div class="grid__col  grid__col--6@medium">
+        <div class="example-col">6 cols</div>
+    </div>
+    <div class="grid__col  grid__col--6@medium">
+        <div class="example-col">6 cols <br>More Content <br>More Content... <br>More...</div>
+    </div>
+</section>
+
+<footer class="footer">
+    <a href="http://blateral.com" class="bdot" title="b.lateral - creative agency"><span>handcrafted by </span></a>
+</footer>
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.4.1/prism.min.js" data-manual></script>
+    <script>
+        var codeElements = document.querySelectorAll('[data-code]');
+
+        for(var i = 0; i < codeElements.length; i++) {
+            var el = codeElements[i];
+            var html = el.outerHTML.replace('data-code=""', '').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace('/\n/g', '    ');
+            var code = document.createElement('pre')
+
+            code.className = 'language-markup';
+            code.innerHTML = '<code>' + html + '</code>'.trim();
+            el.insertAdjacentHTML('afterend', code.outerHTML);
+        }
+
+        Prism.highlightAll();
+    </script>
+</body>
+</html>
