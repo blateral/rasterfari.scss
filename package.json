@@ -6,7 +6,7 @@
     "start": "node-sass --watch scss/rasterfari.scss example/css/rasterfari.css",
     "deploy": "node-sass scss/rasterfari.scss example/css/rasterfari.css && node gh-pages"
   },
-  "homepage": "https://github.io/blateral/rasterfari.scss",
+  "homepage": "http://blateral.github.io/rasterfari.scss/",
   "repository": {
     "type": "git",
     "url": "https://github.com/blateral/rasterfari.scss.git"
