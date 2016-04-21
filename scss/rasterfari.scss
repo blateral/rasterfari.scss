@@ -1,7 +1,8 @@
 //**
 // * Settings
-$rasterfari__cols: 12 !default;
+$rasterfari__cols: 12 !default; 
 $rasterfari__gutter: 20px !default;
+$rasterfari__namespace: '' !default;
 $rasterfari__breakpoints: (
     'medium': '(min-width: 40em)',
     'large': '(min-width: 64em)'
@@ -11,23 +12,42 @@ $rasterfari__breakpoints: (
 
 //**
 // * Container
-.grid {
+.#{$rasterfari__namespace}grid {
     margin-left: -$rasterfari__gutter;
     display: block;
+    font-size: 0;
+
+    &.has-no-gutter {
+      margin-left: 0;
+    }
 }
 
 
 
 //**
 // * Items
-.grid__col {
+.#{$rasterfari__namespace}grid__col {
     width: 100%;
     padding-left: $rasterfari__gutter;
     -webkit-box-sizing:border-box;
        -moz-box-sizing:border-box;
             box-sizing:border-box;
     display: inline-block;
-    vertical-align:top;
+    vertical-align: top;
+    font-size: 16px;
+
+    .is-middle & {
+        vertical-align: middle;
+    }
+
+    .is-bottom & {
+        vertical-align: bottom;
+    }
+
+    .has-no-gutter & {
+      padding-left: 0;
+    }
+
 
     @for $i from 1 through $rasterfari__cols {
         &--#{$i} {
